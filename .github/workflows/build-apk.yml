@@ -26,8 +26,7 @@ jobs:
           gradle-version: '8.9'
 
       - name: Rozpakuj projekt
-        run: |
-          unzip -q Codziennik-Android-v3.zip -d build
+        run: |unzip -q Codziennik-Android-v3-poprawiony.zip -d build
 
       - name: Ustaw JVM 17
         run: |
