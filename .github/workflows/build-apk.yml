@@ -27,7 +27,7 @@ jobs:
 
       - name: Rozpakuj projekt
         run: |
-          unzip -q Codziennik-Android-v1.zip -d build
+          unzip -q Codziennik-Android-v3.zip -d build
 
       - name: Ustaw JVM 17
         run: |
