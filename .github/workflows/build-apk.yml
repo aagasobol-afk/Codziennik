@@ -37,7 +37,7 @@ jobs:
       - name: Zbuduj APK
         run: |
           cd build/Codziennik
-          gradle assembleDebug
+          gradle assembleDebug --stacktrace --info
 
       - name: Udostępnij APK
         uses: actions/upload-artifact@v4
