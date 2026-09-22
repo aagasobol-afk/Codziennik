@@ -2,8 +2,8 @@ name: Build Codziennik APK
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, work]
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -24,22 +24,13 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Rozpakuj projekt
-        run: |
-          unzip -q Codziennik-Android-v3-poprawiony.zip -d build
-
-      - name: Ustaw JVM 17
-        run: |
-          sed -i "/android {/a\\    compileOptions {\\n        sourceCompatibility JavaVersion.VERSION_17\\n        targetCompatibility JavaVersion.VERSION_17\\n    }" build/Codziennik/app/build.gradle
-          sed -i "/android {/a\\    kotlinOptions {\\n        jvmTarget = '17'\\n    }" build/Codziennik/app/build.gradle
 
       - name: Zbuduj APK
         run: |
-          cd build/Codziennik
-          gradle assembleDebug --stacktrace --info
+          gradle lint test assembleDebug --stacktrace --info
 
       - name: Udostępnij APK
         uses: actions/upload-artifact@v4
         with:
           name: Codziennik-APK
-          path: build/Codziennik/app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk

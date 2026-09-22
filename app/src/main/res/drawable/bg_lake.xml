@@ -1,0 +1,4 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/lake_sky" />
+    <item android:top="55dp"><shape><solid android:color="@color/lake_water" /></shape></item>
+</layer-list>
