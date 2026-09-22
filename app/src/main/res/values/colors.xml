@@ -1,0 +1,10 @@
+<resources>
+    <color name="forest">#233A2A</color>
+    <color name="forest2">#314A36</color>
+    <color name="sage">#68745A</color>
+    <color name="cream">#F2EBDD</color>
+    <color name="gold">#B88955</color>
+    <color name="graphite">#2D302C</color>
+    <color name="lake_sky">#95AEB2</color>
+    <color name="lake_water">#496D70</color>
+</resources>
